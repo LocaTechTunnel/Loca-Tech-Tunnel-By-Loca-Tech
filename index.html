@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocaTech - Secure Tunneling CLI</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --border: #30363d;
+            --code-bg: #010409;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        h1 span {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+        }
+
+        section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 15px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            color: #7ee787;
+            margin: 15px 0;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            background-color: rgba(110, 118, 129, 0.4);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #238636;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            border: 1px solid rgba(27,31,35,0.15);
+        }
+
+        .btn:hover {
+            background-color: #2ea043;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>⚡ <span>LocaTech</span> Tunnel</h1>
+            <p class="subtitle">Plataforma avanzada de enlaces seguros y túneles de red de alta velocidad CLI</p>
+        </header>
+
+        <section>
+            <h2>¿Qué es LocaTech?</h2>
+            <p><strong>LocaTech Tunnel</strong> es una herramienta ligera desarrollada en Node.js diseñada para exponer servidores locales de desarrollo de forma instantánea a internet de manera segura y eficiente.</p>
+            <p>Ideal para desarrolladores que necesitan probar webhooks, mostrar avances en tiempo real o conectar servicios locales sin complicaciones de configuraciones de enrutamiento complejas.</p>
+        </section>
+
+        <section>
+            <h2>Características Principales</h2>
+            <ul>
+                <li><strong>Despliegue Instantáneo:</strong> Conecta tu puerto local a una URL pública en cuestión de segundos mediante comandos directos.</li>
+                <li><strong>Subdominios Personalizados:</strong> Opción para solicitar y asegurar enlaces específicos adaptados a tus necesidades de prueba.</li>
+                <li><strong>Máxima Privacidad:</strong> Arquitectura optimizada para enrutar el tráfico de forma anónima y segura.</li>
+                <li><strong>Multiplataforma:</strong> Totalmente compatible con entornos de terminal modernos, incluidos sistemas Linux y emuladores móviles avanzados.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Instalación y Uso Global</h2>
+            <p>Podés instalar la herramienta directamente desde el registro oficial de Node Package Manager (NPM) ejecutando el siguiente comando en tu terminal:</p>
+            <pre><code>npm install -g locatech-tunnel</code></pre>
+            
+            <p>Para poner en marcha un túnel apuntando a un puerto específico de tu localhost (por ejemplo, el puerto <code>3000</code>), utilizá:</p>
+            <pre><code>locatech --port 3000</code></pre>
+            
+            <p>Si deseas solicitar un subdominio personalizado al iniciar el túnel, añade la bandera correspondiente:</p>
+            <pre><code>locatech --port 3000 --subdomain mi-app-custom</code></pre>
+        </section>
+
+        <div class="btn-container">
+            <a href="https://github.com/LocaTechTunnel" class="btn" target="_blank">Ver Repositorio en GitHub</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 LocaTech. Todos los derechos reservados.</p>
+            <p>Mantenido y distribuido por <a href="https://github.com/LocaTechTunnel" target="_blank">LocaTechTunnel</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
